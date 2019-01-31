@@ -1,24 +1,33 @@
 <?php
-function insertion_sort($arr) {
+/* Insert sort PHP implementation
+   Complexity: 0(n^2)
+   Emmanuel Bashorun. 2019.
+*/
+
+function insert_sort($sort) {
     $value = 0;
     $arrHolder = array();
-    while ($value < count($arr)) {
+    while ($value < count($sort)) {
         $arrHolder[] = $value;
         $value++;
     }
     
-    foreach ($arrHolder as $i => $j) {
-        $cursor = $arr[$j];
-        $pos = $j;
+    foreach ($arrHolder as $j) {
+        $key = $sort[$j];
+        $index = $j;
 
-        while ($pos > 0 AND $arr[$pos - 1] > $cursor) {
-            $arr[$pos] = $arr[$pos - 1];
-            $pos = $pos - 1;  
+        while ($index > 0 AND $sort[$index - 1] > $key) {
+            $sort[$index] = $sort[$index - 1];
+            $index = $index - 1;  
         }
-        $arr[$pos] = $cursor;
+        $sort[$index] = $key;
     }
-    return $arr;
+    foreach($sort as $i) {
+        echo $i . ', ';
+    }
+    return $sort;
+    
 }
-print_r(insertion_sort([5, 2, 6, 4, 1, 55, 3, 7, 8, 19, 9, 21, 13, 456, 9133234, 212, 87, 17, 11]));
-
+echo "[5, 2, 6, 4, 1, 3] <br />";
+insert_sort([5, 2, 6, 4, 1, 3]);
 ?>
