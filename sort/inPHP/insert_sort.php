@@ -28,5 +28,7 @@ function insert_sort($sort) {
     
 }
 echo "[5, 2, 6, 4, 1, 3] <br />";
+
 insert_sort([5, 2, 6, 4, 1, 3]);
+
 ?>
