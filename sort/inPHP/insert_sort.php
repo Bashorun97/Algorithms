@@ -1,7 +1,6 @@
 <?php
 /* Insert sort PHP implementation
-   Complexity: 0(n^2)
-   Emmanuel Bashorun. 2019.
+   Emmanuel Bashorun. 27/1/2019.
 */
 
 function insert_sort($sort) {
