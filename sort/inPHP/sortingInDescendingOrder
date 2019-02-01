@@ -1,1 +1,1 @@
-Simply change the < sign in $sort[$index - 1] < $key) to > (greater than) sort in descending order
+Simply change the > sign in $sort[$index - 1] > $key) to < (lesser than) sort in descending order
