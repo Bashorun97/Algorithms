@@ -16,5 +16,5 @@ def binary_search(n, x):
             i = center -1
     return 'Position not found';
 
-sorted = [52,3,4,5,6]
-print(binary_search(sorted, 6))
+sorted = [52,3,4,5,6,456,24,546,68,23,1,78,0,-1,32]
+print(binary_search(sorted, 546))
