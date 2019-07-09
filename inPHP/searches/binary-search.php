@@ -4,7 +4,7 @@ function binary_search($n, $x) {
     $d = len(n) - 1;
 
     while ($i < len(n)) {
-        $mid_val = $i + ($d - 1)//2;
+        $mid_val = $i + ($d - 1) / 2;
         if ($n[$mid_val] == $x) {
             return $mid_val;
         }
@@ -17,6 +17,6 @@ function binary_search($n, $x) {
     }
     return 'Position not found';
 }
-sorted = [52,3,4,5,6,456,24,546,68,23,1,78,0,-1,32]
-print(binary_search(sorted, 546))
-?>  
+$sorted = [52,3,4,5,6,456,24,546,68,23,1,78,0,-1,32];
+print(binary_search($sorted, 546));
+?>

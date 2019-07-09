@@ -22,6 +22,13 @@ def is_sort(unsort):
             return False
     return True
 
-
-unsort = [4,3,2,1,10]
-print(monkey_sort(unsort))
+if __name__ == '__main__':
+    try:
+        take = input('Enter arrays seperated with a comma: ')
+    except:
+        take = raw_input('Enter arrays seperated with a comma: ')
+    unsort = []
+    for i in take.split(','):
+        int(i)
+        unsort.append(i)
+    print(monkey_sort(unsort))
