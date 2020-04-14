@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 def quick_sort(arr):
     arr_len = len(arr)
     great = []
