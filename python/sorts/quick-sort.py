@@ -17,3 +17,16 @@ def quick_sort(arr):
 
 
 print(quick_sort([3,4,2,1,5,35,0,55,2, 5, 1, 3, 7, 4, 2, 3, 9, 8, 6, 3]))
+
+"""
+#using list comprehensions
+def quick_sort(arr):
+  arr_len = len(arr)
+  if arr_len <= 1:
+    return arr
+  else:
+    pivot = arr[0]
+    return quick_sort([el for el in arr[1:] if el <= pivot])+[pivot]+quick_sort([el for el in arr[1:] if el > pivot])
+unsorted = [4,2,1,4,2,5,873,0]
+print(quick_sort(unsorted))
+"""

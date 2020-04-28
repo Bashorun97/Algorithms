@@ -1,73 +1,65 @@
 #!/usr/env/bin python
+# Sun 10 Nov 2019 07:12:51 PM WAT
+# Babaibeji
+
 from collections import defaultdict
 
 net = defaultdict(list)
 
-graph = {'A': ['B', 'E', 'C'],
+graph = {'A': ['D', 'E', 'C'],
         'B': ['D', 'E', 'A'],
-        'E': ['D', 'B', 'A'],
-        'C': ['A', 'F', 'G'],
-        'D': ['B', 'E'],
-        'F': ['C'],
-        'G': ['C']
+        'C': ['D', 'C', 'A'],
+        'D': ['C', 'E'],
+        'E': ['D','C','A']
         }
-
-
+        
 # dynamically add nodes and children
 def add_nodes_and_edges(node, child):
     net[node].append(child)
 
-# all the nodes of a graph
 def bfs_traverse(graph, start):
+  queue_of_nodes = [start]
+  traversed = []
 
-    #keep track of all visited nodes
-    explored = []
+  while queue_of_nodes:
 
-    # keep track of unvisited nodes
-    queue = [start]
+    nodes = queue_of_nodes.pop(0)
+    if nodes not in traversed:
+      traversed.append(nodes)
+    
+      for neighbours in graph[nodes]:
+        queue_of_nodes.append(neighbours)
+        print(queue_of_nodes)
+  print(f'Successfully traversed tree')
+  return traversed
 
-    # keep looping until there are no node in the queue
-    while queue:
+#bfs_traverse(graph, 'A')
 
-        #pop first node from queue
-        node = queue.pop(0)
-        
-        if node not in explored:
-            explored.append(node)
-            neighbours = graph[node]
-            
-            for neighbour in neighbours:
-                queue.append(neighbour)
-            
-    print('Successfully traversed graph')
-    return explored
+def shortest_path(graph, start, end):
+  queue = [[start]]
+  explored = []
+  
+  if start == end:
+  	return f'Found out path: start => end'
+  
+  while queue:
+    path = queue.pop(0)
+    node = path[-1]
 
-def bfs_shortest_path(graph, start, goal):
-    explored = []
-    queue = [[start]]
+    if node not in explored:
+      neighbours = graph[node]
 
-    if start == goal:
-        return 'found out'
+      for neighbour in neighbours:
+      	#create path
+        new_path = list(path)
+        #update path with latest neighbour
+        new_path.append(neighbour)
+        queue.append(new_path)
 
-    while queue:
-        path = queue.pop(0)
-        node = path[-1]
-
-        if node not in explored:
-            neighbours = graph[node]
-            print(node)
-            for neighbour in neighbours:
-                new_path = list(path)
-                new_path.append(neighbour)
-                queue.append(new_path)
-                print(new_path)
-        
-                if neighbour == goal:
-                    return new_path
-                
-            explored.append(node)
-
-    return 'no connecting passage found'
+        if neighbour == end:
+          return f'Found path at {new_path}!'
+      explored.append(node)
+  return f'Path doesn\'t exist'
 
 add_nodes_and_edges(0, 1)
 add_nodes_and_edges(0, 2)
@@ -75,6 +67,5 @@ add_nodes_and_edges(1, 2)
 add_nodes_and_edges(2, 0)
 add_nodes_and_edges(2, 3)
 add_nodes_and_edges(3, 3)
-
-#print(bfs_traverse(graph, 'A'))
-print(bfs_shortest_path(graph, 'G', 'D'))
+#print(shortest_path(graph, 'B', 'A'))
+print(bfs_traverse(graph, 'A'))

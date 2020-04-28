@@ -32,6 +32,20 @@ def anagram(s1,s2):
     for i in range(len(s2)):
         pos = ord(s2[i])-ord('a')
         c2[pos] = c2[pos] + 1
+    
+
+    j = 0
+    stillOK = True
+    while j<26 and stillOK:
+        if c1[j]==c2[j]:
+            j = j + 1
+        else:
+            stillOK = False
+
+    return stillOK
+
+print(anagram('apple','pleap'))
+
 '''
 def anagram(s1, s2):
     
@@ -49,16 +63,3 @@ def anagram(s1, s2):
   
 print(anagram('apple','pleap'))
 '''
-
-
-    j = 0
-    stillOK = True
-    while j<26 and stillOK:
-        if c1[j]==c2[j]:
-            j = j + 1
-        else:
-            stillOK = False
-
-    return stillOK
-
-print(anagram('apple','pleap'))

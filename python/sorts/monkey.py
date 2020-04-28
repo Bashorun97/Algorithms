@@ -1,7 +1,7 @@
 '''
     This is a highly inefficient algorithm
     Worst-case performance: Unbounded (randomized version),[1] O((n+1)!) (deterministic version)
-    Best-case performance: O(n)
+    Best-case performance: O(1)
     Average performance	O((n+1)!)
 '''
 import random
