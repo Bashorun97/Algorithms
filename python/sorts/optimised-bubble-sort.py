@@ -5,6 +5,8 @@ def bubble_sort(arr):
     arr_length = len(arr)
     for i in range(arr_length-1):
         switch = False
+        # last part of list contains sorted elements
+        # so search is limited between 0, len(arr) -1 - i
         for j in range(arr_length-1-i):
             if arr[j] > arr[j+1]:
                 switch = True

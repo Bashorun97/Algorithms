@@ -1,26 +1,3 @@
-
-'''
-def all_perms(elements):
-    if len(elements) <=1:
-        yield elements
-    else:
-        for perm in all_perms(elements[1:]):
-            for i in range(len(elements)):
-                yield perm[:i] + elements[0:1] + perm[i:]
-
-def all_perms(elements):
-    if len(elements) <=1:
-        return elements
-    else:
-        tmp = []
-        for perm in all_perms(elements[1:]):
-            for i in range(len(elements)):
-                tmp.append(perm[:i] + elements[0:1] + perm[i:])
-        return tmp
-
-word = "abc"
-print(list(all_perms(word)))
-'''
 def anagram(s1,s2):
     c1 = [0]*26
     c2 = [0]*26
@@ -45,21 +22,3 @@ def anagram(s1,s2):
     return stillOK
 
 print(anagram('apple','pleap'))
-
-'''
-def anagram(s1, s2):
-    
-    optimize = {ord(f) - ord('a'):ord(s) - ord('a') for f, s in zip(s1, s2)}
-    left, right = 0, 0
-    for k, v in optimize.items():
-        left += k
-        right += v
-        print(left, right)
-    print(optimize)
-    if left != right:
-        return False
-    return True
-
-  
-print(anagram('apple','pleap'))
-'''

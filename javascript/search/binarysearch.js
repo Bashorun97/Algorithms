@@ -1,3 +1,4 @@
+/*
 class binarySearch {
     constructor(target, array) {
         this.target = target;
@@ -26,8 +27,8 @@ class binarySearch {
 let arr = [1,2,3,4,5,6,7];
 let target = 4;
 console.log(new binarySearch(target, arr).search())
+*/
 
-/*
 // Recursive implementation
 
 function BinarySearch(array, high, low, target) {
@@ -52,4 +53,3 @@ let arr = [1,2,3,4,5,6,7];
 let binS = BinarySearch(arr, arr.length - 1, 0, 4)
 let binSS = binS(arr, arr.length - 1, 0, 4)
 console.log(binSS);
-*/

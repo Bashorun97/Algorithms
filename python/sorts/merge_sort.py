@@ -10,5 +10,5 @@ def merge_sort(n):
         start.append(n[0])
     end.reverse()
     return (start + end)
-n = [345, 2, 6]
+n = [3,4,2,1,5,35,0,55,2, 5, 1, 3, 7, 4, 2, 3, 9, 8, 6, 3]
 print(merge_sort(n))

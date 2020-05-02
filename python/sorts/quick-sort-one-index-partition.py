@@ -14,5 +14,5 @@ def quick_sort(alist, l, u):
   quick_sort(alist, l, m - 1)
   quick_sort(alist, m + 1, u)
 
-unsorted = [6,5,3,1,8,7,2,4]
-print(quick_sort(unsorted, 0, len(unsorted)-1))
+unsorted = [3,4,2,1,5,35,0,55,2, 5, 1, 3, 7, 4, 2, 3, 9, 8, 6, 3]
+quick_sort(unsorted, 0, len(unsorted)-1)
