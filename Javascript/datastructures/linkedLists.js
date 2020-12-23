@@ -55,7 +55,7 @@ class LinkedList {
             n = n.nextNode;
         }
         if (n === undefined) {
-            console.log(`Item isn't in linked list or your'e at the end of the Linked List.`);
+            console.log(`Item is not within the linked list or your are at the end of the Linked List.`);
         }
         else {
             let node = new Node(data);
@@ -173,7 +173,6 @@ class LinkedList {
             }
             n.nextNode = undefined;
         }
-        
     }
 
     deleteStart () {
@@ -185,7 +184,6 @@ class LinkedList {
             let n = this.startNode;
             this.startNode = this.startNode.nextNode; 
         }
-        
     }
 
     deleteByValue (item) {
